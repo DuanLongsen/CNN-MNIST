@@ -1,6 +1,26 @@
-# CNN MNIST 手写体识别 — 深度学习期末作业
+# CNN MNIST
 
-基于 PyTorch 实现的 CNN 手写体识别模型，包含参数量手动推导、模型训练与消融实验。
+## 项目介绍
+
+本项目基于 PyTorch 构建了一个卷积神经网络（CNN），用于 MNIST 手写数字识别。MNIST 数据集包含 60,000 张训练图像和 10,000 张测试图像，每张为 28×28 像素的单通道灰度图像，涵盖 0-9 共 10 个数字类别。
+
+项目完成了以下三个任务：
+
+1. **手动推导参数量**：对给定的 3 卷积层 + 2 池化层 + 1 全连接层的 CNN 结构，逐层计算参数量
+2. **PyTorch 实现与训练**：编写模型代码，在 MNIST 上训练并记录测试集准确率
+3. **消融实验**：对比 ReLU、Sigmoid、Tanh 三种激活函数对收敛速度和最终准确率的影响
+
+## 运行环境
+
+- Python 3.13
+- PyTorch 2.12.0 (CPU)
+- torchvision
+- matplotlib
+
+```bash
+pip install torch torchvision matplotlib
+python cnn_mnist.py
+```
 
 ## 网络结构
 
@@ -49,13 +69,6 @@
 - **Tanh** 表现居中，零中心化优于 Sigmoid，但后期测试 loss 波动较大，仍受梯度饱和影响
 
 ![消融实验对比图](ablation_activation.png)
-
-## 运行方式
-
-```bash
-pip install torch torchvision matplotlib
-python cnn_mnist.py
-```
 
 ## 文件说明
 
